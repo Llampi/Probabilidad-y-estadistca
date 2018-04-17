@@ -1,1 +1,22 @@
+# Nombre : Elias Llampi Aliaga 20141460b
+
+
+#(a) Crea y almacena una secuencia de valores del 5 al 􀀀11 que progresa en pasos de tamaño 0.3.
+
+seq <- seq(5,11,0.3)
+
+#(b) Sobrescribe el objeto en (a) usando la misma secuencia con el orden invertido.
+
+seq <- sort(seq, decreasing = TRUE)
+
+#(c) Repetir un vector
+
+vector <- c(-1,3, -5,7, -9)
+repetido <- rep(vector, times = 2)
+repetido
+
+#(d) Crear un vector con caracteristicas especificas
+
+vec <- c(seq(6,12), rep(5.3, times = 3), -3, seq(length=9, from=102, to=length(repetido)))
+length(vec)
 
