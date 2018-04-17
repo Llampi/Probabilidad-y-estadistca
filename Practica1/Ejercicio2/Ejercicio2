@@ -1,1 +1,43 @@
+# Llampi Aliaga Elias 20141460b
 
+#(a) Construye y almacena una matriz 4 x 2 con sus valores ordenados por filas con los valores 
+# 4.3, 3.1, 8.2, 8.2, 3.2, 0.9, 1.6 y 6.5, en ese orden.
+
+vector <- c(4.3, 3.1, 8.2, 8.2, 3.2, 0.9, 1.6, 6.5)
+dim(vector) <- c(4,2)
+matr <- vector
+matr
+
+#(b) Confirma que las dimensiones de la matriz en (a) son 3 x 2 si se elimina una fila.
+
+matr2 <- matr[-1,]
+dim(matr2)
+
+#(c) Sobrescribe la segunda columna de la matriz en (a) con la misma columna ordenada de menor
+a mayor.
+
+matr[,2]=sort(matr[,2])
+
+#(d) ¿Qué devuelve R si se elimina la cuarta fila y la primera columna de (c)?. Usa la función matrix
+para asegurarte que el resultado sea una matriz de una sola columna, en lugar de un vector.
+
+matr2 <- matr[-4,]
+matr2 <- matr2[,-1]
+matr2 <- matrix(matr2,,1)
+
+#(e) Almacena los cuatro elementos inferiores de (c) como una nueva matriz 2 x 2.
+
+elem4 <- matrix(c(matr[3:4,1],matr[3:4,2]),2,2)
+elem4
+
+#(f) Sobrescribe, en este orden, los elementos de (c) en las posiciones (4, 2), (1, 2), (4, 1) y (1, 1)con
+-(1/2) de los dos valores en la diagonal de (e).
+
+matr[c(4,1),c(2,1)] <- -(1/2)*diag(elem4)
+matr
+
+#(g) Para la matriz A, verificar que el produscto de su inversa por A es la matriz identidad
+
+A <- matrix(c(2,0,0,0,0,3,0,0,0,0,5,0,0,0,0,-1),4,4)
+B <- solve(A)
+(A %*% B)- diag(4)
